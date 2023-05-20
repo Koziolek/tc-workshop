@@ -1,5 +1,6 @@
 package com.example.demo.support;
 
+import com.example.demo.DemoApplication;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
@@ -10,7 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.shaded.com.google.common.net.HttpHeaders;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = DemoApplication.class)
 @ContextConfiguration(initializers = LocalEnvironmentInitializer.class)
 public class AbstractIntegrationTest {
 
